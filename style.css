@@ -1,0 +1,126 @@
+body {
+    transition: background-color 1s, color 1s;
+    text-align: center;
+    padding: 50px;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+}
+
+#season-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #f06595, #ff6b6b);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.summer {
+    background-color: #FFD700; /* Fundo amarelo dourado */
+    color: #FF4500;           /* Texto laranja escuro */
+}
+
+.autumn {
+    background-color: #FF8C00; /* Fundo laranja escuro */
+    color: #8B4513;           /* Texto marrom sela */
+}
+
+.winter {
+    background-color: #00BFFF; /* Fundo azul profundo */
+    color: #FFFFFF;            /* Texto branco */
+}
+
+.spring {
+    background-color: #00FF7F; /* Fundo verde primavera */
+    color: #FF1493;            /* Texto rosa profundo */
+}
+
+#falling-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.falling-element {
+    position: absolute;
+    top: -50px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.summer .falling-element {
+    animation-duration: 5s;
+}
+
+.autumn .falling-element {
+    animation-duration: 7s;
+}
+
+.winter .falling-element {
+    animation-duration: 10s;
+}
+
+.spring .falling-element {
+    animation-duration: 6s;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    #season-title {
+        font-size: 36px;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #season-title {
+        font-size: 28px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+}
